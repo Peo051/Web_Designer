@@ -1,31 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 10</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-        <table>
-            <td colspan="2">
-                <span style="text-align: center;">Chọn địa chỉ nhận hàng</span>
-            </td>
-            
-            <tr>
-                <td>
-                    <img src="images/truck.png" style="width: 30px; vertical-align: middle;">
-                    <label for="home" style="vertical-align: middle;">NHẬN HÀNG TẠI NHÀ</label>
-                    <input type="radio" name="ship" id="home"> 
-                </td>
-                <td >
-                    <img src="images/house.png" style="width: 30px; vertical-align: middle;">
-                    <label for="home2" style="vertical-align: middle;">NHẬN HÀNG TẠI TRUNG TÂM</label>
-                    <input type="radio" name="ship" id="home2"> 
-                </td>
-            </tr>
-        </table>
-    </form>
+
+<h3>Chọn địa chỉ nhận hàng</h3>
+
+<form>
+
+<table class="option-table">
+    <tr>
+        <td>
+            <label>
+                <input type="radio" name="delivery"  >
+                <img src="images/truck.png" width="30">
+                <label>NHẬN HÀNG TẠI NHÀ</label>
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="radio" name="delivery">
+                <img src="images/house.png" width="30">
+                NHẬN HÀNG TẠI TRUNG TÂM
+            </label>
+        </td>
+    </tr>
+</table>
+
+<table class="form-table">
+    <tr>
+        <td><input type="text" placeholder="Họ và tên (*)"></td>
+        <td><input type="text" placeholder="Số điện thoại (*)"></td>
+    </tr>
+    <tr>
+        <td><input type="email" placeholder="Email"></td>
+        <td>
+            <select>
+                <option>Chọn Tỉnh / Thành phố</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <select>
+                <option>Chọn Quận / Huyện</option>
+            </select>
+        </td>
+        <td>
+            <select>
+                <option>Chọn Phường / Xã</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="text" placeholder="Số nhà / Tên đường (*)">
+        </td>
+    </tr>
+</table>
+
+<p>
+    <label>
+        <input type="checkbox" >
+        Sử dụng thông tin này để đăng ký tài khoản mua hàng
+    </label>
+</p>
+
+<p>
+    <textarea placeholder="Để lại lời nhắn cho người bán"></textarea>
+</p>
+
+<h3>Chọn hình thức thanh toán</h3>
+
+<table class="option-table">
+    <tr>
+        <td>
+            <label>
+                <input type="radio" name="payment" >
+                <img src="images/wallet.png" width="30">
+                Thanh toán khi nhận hàng
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="radio" name="payment">
+                <img src="images/atm.png" width="30">
+                Thẻ ATM / Internet Banking
+            </label>
+        </td>
+        <td>
+            <label>
+                <input type="radio" name="payment">
+                <img src="images/credit.png" width="30">
+                Thẻ tín dụng
+            </label>
+        </td>
+    </tr>
+</table>
+
+<p>
+    <label>
+        <input type="checkbox" >Tôi đồng ý với điều khoản & chính sách
+    </label>
+</p>
+
+<button type="submit">THANH TOÁN</button>
+
+</form>
+
 </body>
 </html>
