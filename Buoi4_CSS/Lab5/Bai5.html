@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab5 - Cities Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Times New Roman", Times, serif;
+            background: #fff;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            border: 2px solid #222;
+            box-sizing: border-box;
+        }
+        header {
+            background: #666;
+            color: #fff;
+            text-align: center;
+            font-size: 35px;
+            font-weight: bold;
+            height: 80px;
+            line-height: 80px;
+            letter-spacing: 2px;
+        }
+        nav {
+            float: left;
+            width: 30%;
+            height: 300px;
+            background: #ccc;
+            padding-top: 30px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        nav a {
+            display: block;
+            color: #4B0082;
+            font-size: 18px;
+            margin: 10px 0 10px 30px;
+            text-decoration: underline;
+        }
+        article {
+            float: left;
+            width: 70%;
+            height: 300px;
+            background: #eee;
+            box-sizing: border-box;
+            padding: 30px 30px 0 30px;
+        }
+        article h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+        article p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        .clearfix {
+            clear: both;
+        }
+        footer {
+            background: #888;
+            color: #fff;
+            text-align: center;
+            padding: 12px 0 10px 0;
+            font-size: 16px;
+            border-top: 1px solid #222;
+        }
+        @media (max-width: 700px) {
+            nav, article {
+                float: none;
+                width: 100%;
+                height: auto;
+            }
+            header {
+                font-size: 24px;
+                height: 50px;
+                line-height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>CITIES</header>
+        <nav>
+            <a href="#">London</a>
+            <a href="#">Paris</a>
+            <a href="#">Tokyo</a>
+        </nav>
+        <article>
+            <h2>London</h2>
+            <p>London is the capital city of England. It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+            <p><b>Standing on the River Thames</b>, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+        </article>
+        <div class="clearfix"></div>
+        <footer>Contact information</footer>
+    </div>
+</body>
+</html>
