@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 8px 16px;
+    background: #ededed;
+    font-family: "Times New Roman", serif;
+    color: #111;
+}
+
+.container {
+    width: 900px;
+    border: 2px solid #222;
+    background: #cfcad7;
+    box-sizing: border-box;
+    margin: 0;
+    text-align: center;
+}
+
+.top,
+.main {
+    display: flex;
+}
+
+.logo,
+.banner,
+.menu,
+.left,
+.content,
+.right,
+.footer {
+    background: #cfcad7;
+    border: 2px solid #ece9ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 41px;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 135px;
+    height: 105px;
+}
+
+.banner {
+    width: 765px;
+    height: 105px;
+}
+
+.menu {
+    width: 100%;
+    height: 84px;
+}
+
+.left,
+.right {
+    width: 135px;
+    height: 290px;
+}
+
+.content {
+    width: 630px;
+    height: 290px;
+}
+
+.footer {
+    width: 100%;
+    height: 62px;
+}

@@ -1,0 +1,22 @@
+.container{
+    background-color: yellow;
+    padding: 22px 26px;
+    width: 85%;
+    margin: 18px auto;
+    box-shadow: 10px 10px 5px grey;
+    text-align: left;
+    font-size: 24px;
+}
+
+.container h3{
+    margin: 0 0 8px 0;
+    font-size: 48px;
+    text-align: left;
+}
+
+.container p{
+    margin: 0;
+    line-height: 1.35;
+    text-align: left;
+    text-align-last: left;
+}

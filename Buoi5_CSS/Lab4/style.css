@@ -1,0 +1,12 @@
+.padding {
+    width:500px;
+    margin:0 auto;
+    font-size:30px;
+    text-align:center;
+    border:1px solid gray;
+    border-radius:5px;
+    padding: 20px;
+}
+.padding:hover {
+    box-shadow: 0 0 5px #0000FF;
+}
