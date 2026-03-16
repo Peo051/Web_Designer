@@ -1,12 +1,93 @@
-.padding {
-    width:500px;
-    margin:0 auto;
-    font-size:30px;
-    text-align:center;
-    border:1px solid gray;
-    border-radius:5px;
-    padding: 20px;
+* {
+  box-sizing: border-box;
 }
-.padding:hover {
-    box-shadow: 0 0 5px #0000FF;
+
+body {
+  margin: 0;
+  background: #e6e6e6;
+  font-family: "Times New Roman", serif;
+}
+
+.container {
+  width: min(760px, 92%);
+  margin: 24px auto 40px;
+}
+
+h1 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 34px;
+}
+
+.sample-block {
+  margin-bottom: 26px;
+}
+
+.sample-block h2 {
+  margin: 0 0 10px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.dinh-dang {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  font-size: 50px;
+  text-align: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 20px;
+  background: #f7f7f7;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.translate-box:hover {
+  transform: translate(16px, -6px);
+  box-shadow: 0 0 5px #0000ff;
+}
+
+.scale-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 5px #0000ff;
+}
+
+.skew-box:hover {
+  transform: skew(8deg, 0deg);
+  box-shadow: 0 0 5px #0000ff;
+}
+
+.rotate-box:hover {
+  transform: rotate(2deg);
+  box-shadow: 0 0 5px #0000ff;
+}
+
+.element-shadow {
+  box-shadow: 0 0 8px #2b6df3;
+}
+
+.text-shadow {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background: #f7f7f7;
+  text-shadow: 3px 2px 4px #6b7280;
+  box-shadow: 0 0 8px #2b6df3;
+}
+
+@media (max-width: 640px) {
+  .sample-block h2 {
+    font-size: 28px;
+  }
+
+  .dinh-dang,
+  .text-shadow {
+    font-size: 36px;
+    padding: 16px;
+  }
 }
