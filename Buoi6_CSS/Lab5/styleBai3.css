@@ -1,0 +1,65 @@
+/* Reset định dạng cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.menu {
+    list-style: none;
+    background-color: blue;
+    display: flex; /* Dàn hàng ngang cho menu chính */
+    width: fit-content;
+}
+
+/* Định dạng chung cho các mục menu */
+.menu li {
+    position: relative; /* Làm gốc tọa độ cho menu con */
+    border-right: 1px solid white;
+}
+
+.menu li span {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+/* Hiệu ứng Hover: đổi màu nền và màu chữ */
+.menu li:hover > span {
+    background-color: #fff5e6; /* Màu vàng nhạt khi hover */
+    color: blue;
+}
+
+/* Ẩn tất cả menu con mặc định */
+.submenu, .submenu-level3 {
+    display: none;
+    position: absolute;
+    list-style: none;
+    background-color: blue;
+    min-width: 200px;
+    top: 100%; /* Đẩy xuống dưới menu cha */
+    left: 0;
+    z-index: 10;
+}
+
+/* Vị trí cho menu cấp 3 (đẩy sang bên phải) */
+.submenu-level3 {
+    top: 0;
+    left: 100%; /* Nằm bên phải của menu cấp 2 */
+}
+
+/* Hiển thị menu con khi hover vào thẻ li cha */
+.menu li:hover > .submenu,
+.submenu li:hover > .submenu-level3 {
+    display: block;
+}
+
+/* Đường kẻ trắng ngăn cách các mục menu dọc */
+.submenu li {
+    border-right: none;
+    border-bottom: 1px solid white;
+}

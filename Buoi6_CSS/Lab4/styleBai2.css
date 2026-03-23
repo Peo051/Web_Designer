@@ -1,0 +1,45 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu cấp 1 */
+#menu {
+    width: 150px;
+}
+
+#menu li {
+    list-style: none;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Hover */
+#menu li:hover {
+    background: darkgray;
+}
+
+/* Menu cấp 2 */
+#menu li ul {
+    position: absolute;
+    left: 150px;
+    top: 0;
+    display: none;
+    width: max-content;
+}
+
+/* Menu cấp 3 */
+#menu li ul li ul {
+    left: 100%;
+    top: 0;
+}
+
+/* Hiện menu con khi hover */
+#menu li:hover > ul {
+    display: block;
+}

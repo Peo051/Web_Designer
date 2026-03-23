@@ -1,0 +1,71 @@
+body {
+        font-family: Arial;
+    }
+
+    /* Menu chính */
+    .menu {
+        background: blue;
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu > li {
+        list-style: none;
+        position: relative;
+        border-right: 1px solid white;
+    }
+
+    .menu > li:last-child {
+        border-right: none;
+    }
+
+    .menu > li > span {
+        display: block;
+        padding: 15px 30px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .menu > li:hover {
+        background: oldlace;
+    }
+
+    .menu > li:hover > span {
+        color: black;
+    }
+
+    /* Menu con */
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 200px;
+        display: none;
+    }
+
+    .submenu li {
+        list-style: none;
+        background: blue;
+        border-bottom: 1px solid white;
+        text-align: center;
+    }
+
+    .submenu li span {
+        display: block;
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .submenu li:hover {
+        background: oldlace;
+    }
+
+    .submenu li:hover > span {
+        color: black;
+    }
+
+    /* Hover để hiện menu con */
+    .menu li:hover .submenu {
+        display: block;
+    }
