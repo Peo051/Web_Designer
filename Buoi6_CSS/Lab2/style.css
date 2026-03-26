@@ -14,12 +14,12 @@
     line-height: 25px;
     border-bottom: 1px solid white;
 }
-.sidebar ul li span{
+.sidebar ul li a{
     color: white;
     text-decoration: none;
     padding: 0 20px;
 }
-.sidebar ul li span:hover {
+.sidebar ul li a:hover {
     font-weight: bold;
     background-color: #900;
 }

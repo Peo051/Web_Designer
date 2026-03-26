@@ -19,7 +19,7 @@
     border-right: 1px solid white;
 }
 
-.menu li span {
+.menu li a {
     display: block;
     padding: 15px 20px;
     color: white;
@@ -29,9 +29,9 @@
 }
 
 /* Hiệu ứng Hover: đổi màu nền và màu chữ */
-.menu li:hover > span {
+.menu li:hover > a {
     background-color: #fff5e6; /* Màu vàng nhạt khi hover */
-    color: blue;
+    color: black;
 }
 
 /* Ẩn tất cả menu con mặc định */

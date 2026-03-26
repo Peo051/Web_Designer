@@ -19,7 +19,7 @@ body {
         border-right: none;
     }
 
-    .menu > li > span {
+    .menu > li > a {
         display: block;
         padding: 15px 30px;
         color: white;
@@ -30,7 +30,7 @@ body {
         background: oldlace;
     }
 
-    .menu > li:hover > span {
+    .menu > li:hover > a {
         color: black;
     }
 
@@ -50,7 +50,7 @@ body {
         text-align: center;
     }
 
-    .submenu li span {
+    .submenu li a {
         display: block;
         padding: 12px;
         color: white;
@@ -61,7 +61,7 @@ body {
         background: oldlace;
     }
 
-    .submenu li:hover > span {
+    .submenu li:hover > a {
         color: black;
     }
 
