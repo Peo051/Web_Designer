@@ -1,0 +1,14 @@
+body {
+    background: #f1f3f5;
+}
+.main {
+    background: #fff;
+     border-radius: 12px;
+      padding: 22px;
+       box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+.logo {
+    width: 110px;
+    display: block;
+     margin: 0 auto 14px;
+}
