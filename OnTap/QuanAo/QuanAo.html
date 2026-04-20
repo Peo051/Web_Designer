@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!--
+        PHẦN CÀI ĐẶT CHUNG CHO TRANG WEB
+        - UTF-8: giúp tiếng Việt hiển thị đúng, không bị lỗi ký tự.
+        - viewport: giúp trang tự co giãn khi mở trên điện thoại/tablet.
+        - title: tên tab trình duyệt.
+        - link css: nối file giao diện bên ngoài vào HTML (đúng yêu cầu External CSS).
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lee Style Fashion</title>
+    <link rel="stylesheet" href="QuanAo.css">
+</head>
+<body>
+    <!--
+        HEADER = phần đầu trang (phần người dùng nhìn thấy đầu tiên)
+        Chứa 3 nhóm chính:
+        1) Logo thương hiệu
+        2) Tên shop
+        3) Công cụ nhanh: ô tìm kiếm + giỏ hàng
+    -->
+    <header class="site-header">
+        <div class="container top-header">
+            <!-- Logo bấm được: người dùng thường kỳ vọng bấm logo để quay về trang chủ -->
+            <a class="logo" href="#" aria-label="Trang chủ Lee Style Fashion">
+                <img src="HinhAnh/logo.svg" alt="Logo Lee Style Fashion">
+            </a>
+
+            <!-- Tên thương hiệu hiển thị lớn ở giữa -->
+            <h1 class="brand-name">Lee Style Fashion</h1>
+
+            <div class="header-tools">
+                <!--
+                    Ô tìm kiếm:
+                    - form: khung gửi dữ liệu tìm kiếm.
+                    - input: nơi người dùng gõ từ khóa.
+                    - label sr-only: hỗ trợ người dùng dùng trình đọc màn hình.
+                -->
+                <form class="search-box" action="#" method="get">
+                    <label class="sr-only" for="search-input">Tìm sản phẩm</label>
+                    <input id="search-input" name="q" type="text" placeholder="Tìm sản phẩm...">
+                </form>
+
+                <!-- Giỏ hàng dạng link bấm được (đáp ứng tiêu chí có liên kết) -->
+                <a class="cart-link" href="#" aria-label="Giỏ hàng">🛒 Giỏ hàng</a>
+            </div>
+        </div>
+
+        <!--
+            MENU ĐIỀU HƯỚNG
+            - menu cấp 1: các mục chính nằm ngang.
+            - menu cấp 2: nằm trong mục "Sản phẩm".
+            Quan trọng: dùng ul/li lồng nhau để đúng chuẩn bài chấm.
+        -->
+        <nav class="main-nav">
+            <div class="container">
+                <!-- Danh sách menu cấp 1 -->
+                <ul class="menu-level-1">
+                    <li><a href="#">Giới thiệu</a></li>
+
+                    <li class="dropdown">
+                        <a href="#">Sản phẩm</a>
+                        <!-- Danh sách menu cấp 2 (dropdown khi rê chuột) -->
+                        <ul class="menu-level-2">
+                            <li><a href="#">Đầm hoa</a></li>
+                            <li><a href="#">Đầm ren</a></li>
+                            <li><a href="#">Quần suông</a></li>
+                            <li><a href="#">Set công sở</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#size">Bảng size</a></li>
+                    <li><a href="#footer">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN = toàn bộ phần nội dung chính của trang -->
+    <main>
+        <!--
+            BANNER QUẢNG BÁ
+            - Ảnh lớn ở đầu nội dung.
+            - Dòng chữ + nút Shop now đặt đè lên ảnh để giống mẫu.
+            - Nút có hiệu ứng khi hover (được xử lý trong CSS).
+        -->
+        <section class="banner container">
+            <div class="banner-image-wrap">
+                <!-- Ảnh banner chính -->
+                <img
+                    src="https://picsum.photos/id/64/1200/470"
+                    alt="Bộ sưu tập thời trang nữ"
+                >
+                <!-- Khối chữ và nút hiển thị chồng lên ảnh -->
+                <div class="banner-content">
+                    <p class="banner-subtitle">Elegant style collection</p>
+                    <a class="btn-shop" href="#products">Shop now</a>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            KHU DANH SÁCH SẢN PHẨM
+            - Mỗi sản phẩm là 1 thẻ article (khối nội dung độc lập).
+            - Bố cục dùng lưới (grid) để xếp nhiều sản phẩm theo hàng/cột.
+            - Ảnh được phép hover phóng to 1.2 theo yêu cầu đề.
+        -->
+        <section id="products" class="products-section container">
+            <h2>Sản phẩm mới</h2>
+
+            <div class="product-grid">
+                <article class="product-card">
+                    <!-- Ảnh bọc trong thẻ a để bấm ảnh cũng đi tới trang chi tiết -->
+                    <a class="product-image" href="#">
+                        <img src="https://picsum.photos/id/1027/420/560" alt="Đầm hoa tiết">
+                    </a>
+                    <h3>Đầm hoa tiết</h3>
+                    <a class="btn-buy" href="#">Mua ngay</a>
+                </article>
+
+                <article class="product-card">
+                    <a class="product-image" href="#">
+                        <img src="https://picsum.photos/id/1005/420/560" alt="Quần suông">
+                    </a>
+                    <h3>Quần suông</h3>
+                    <a class="btn-buy" href="#">Mua ngay</a>
+                </article>
+
+                <article class="product-card">
+                    <a class="product-image" href="#">
+                        <img src="https://picsum.photos/id/1011/420/560" alt="Đầm ren">
+                    </a>
+                    <h3>Đầm ren</h3>
+                    <a class="btn-buy" href="#">Mua ngay</a>
+                </article>
+
+                <article class="product-card">
+                    <a class="product-image" href="#">
+                        <img src="https://picsum.photos/id/1012/420/560" alt="Quần suông tùy sĩ">
+                    </a>
+                    <h3>Quần suông Tùy sĩ</h3>
+                    <a class="btn-buy" href="#">Mua ngay</a>
+                </article>
+
+                <article class="product-card">
+                    <a class="product-image" href="#">
+                        <img src="https://picsum.photos/id/1016/420/560" alt="Quần suông Tuyết Ái">
+                    </a>
+                    <h3>Quần suông Tuyết Ái</h3>
+                    <a class="btn-buy" href="#">Mua ngay</a>
+                </article>
+
+                <article class="product-card">
+                    <a class="product-image" href="#">
+                        <img src="https://picsum.photos/id/1025/420/560" alt="Áo sơ mi tay dài">
+                    </a>
+                    <h3>Áo sơ mi tay dài</h3>
+                    <a class="btn-buy" href="#">Mua ngay</a>
+                </article>
+            </div>
+        </section>
+
+        <!--
+            BẢNG SIZE
+            - thead: hàng tiêu đề cột (SIZE, VÒNG 1, ...).
+            - tbody: dữ liệu thực tế.
+            - Mỗi dòng dữ liệu tượng trưng cho một cỡ quần áo.
+            - Có hiệu ứng hover đổi màu từng dòng để dễ đọc.
+        -->
+        <section id="size" class="size-section container">
+            <h2>Bảng Size</h2>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SIZE</th>
+                            <th>VÒNG 1</th>
+                            <th>VÒNG 2</th>
+                            <th>VÒNG 3</th>
+                            <th>KG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>S</td>
+                            <td>86</td>
+                            <td>68</td>
+                            <td>90</td>
+                            <td>40-48</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>90</td>
+                            <td>72</td>
+                            <td>96</td>
+                            <td>50-55</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>96</td>
+                            <td>78</td>
+                            <td>98</td>
+                            <td>55-60</td>
+                        </tr>
+                        <tr>
+                            <td>XL</td>
+                            <td>100</td>
+                            <td>82</td>
+                            <td>102</td>
+                            <td>60-65</td>
+                        </tr>
+                        <tr>
+                            <td>XXL</td>
+                            <td>104</td>
+                            <td>86</td>
+                            <td>105</td>
+                            <td>65-70</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!--
+        FOOTER = chân trang
+        - Dùng danh sách ul/li để đúng rubric.
+        - Tất cả mục đều là link để người dùng bấm được.
+    -->
+    <footer id="footer" class="site-footer">
+        <div class="container footer-grid">
+            <section>
+                <h3>Giới thiệu</h3>
+                <!-- Nhóm liên kết thông tin về thương hiệu -->
+                <ul>
+                    <li><a href="#">Về Lee Style</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Dịch vụ khách hàng</h3>
+                <!-- Nhóm liên kết chính sách/chăm sóc khách hàng -->
+                <ul>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Phương thức mua hàng</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                    <li><a href="#">Chính sách giao nhận</a></li>
+                    <li><a href="#">Q&amp;A</a></li>
+                </ul>
+            </section>
+        </div>
+        <p class="copyright">© 2026 Lee Style Fashion Shop</p>
+    </footer>
+</body>
+</html>

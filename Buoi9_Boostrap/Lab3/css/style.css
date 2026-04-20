@@ -1,0 +1,15 @@
+﻿body {
+  background: #efefef;
+  padding: 30px 0;
+}
+.demo {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 24px;
+}
+.logo {
+      width: 150px;
+      margin: 12px auto 0;
+    }

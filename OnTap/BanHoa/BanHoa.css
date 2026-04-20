@@ -1,0 +1,439 @@
+/* ========================================
+   THIẾT LẬP CHUNG CHO TOÀN TRANG WEB
+======================================== */
+
+/* Reset CSS: Xóa margin, padding mặc định của trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Tính toán kích thước bao gồm cả padding và border */
+}
+
+/* Thiết lập font chữ và màu nền cho toàn trang */
+body {
+    font-family: Arial, sans-serif; /* Font chữ mặc định */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    color: #333; /* Màu chữ xám đậm */
+    background-color: #f5f5f5; /* Màu nền xám nhạt */
+}
+
+/* Theo đề bài: hover chuột vào bất kỳ ảnh nào thì ảnh tăng tỉ lệ 1.2 */
+img {
+    transition: transform 0.4s ease;
+}
+
+img:hover {
+    transform: scale(1.2);
+}
+
+/* Container: Giới hạn độ rộng nội dung và căn giữa trang */
+.khung-trang {
+    max-width: 1200px; /* Độ rộng tối đa */
+    margin: 0 auto; /* Căn giữa trang */
+    padding: 0 20px; /* Khoảng cách 2 bên */
+}
+
+/* ========================================
+   PHẦN HEADER (ĐẦU TRANG)
+======================================== */
+
+/* Thiết lập nền trắng và đổ bóng cho header */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Đổ bóng nhẹ phía dưới */
+}
+
+/* Phần trên của header chứa logo và tìm kiếm */
+.dau-trang-tren {
+    padding: 15px 0; /* Khoảng cách trên dưới */
+    background-color: #fff;
+}
+
+/* Sắp xếp logo và search-box nằm ngang, 2 đầu */
+.dau-trang-tren .khung-trang {
+    display: flex; /* Sử dụng flexbox */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Logo bên trái, search bên phải */
+}
+
+/* Thiết lập logo */
+.thuong-hieu {
+    display: flex;
+    align-items: center; /* Căn giữa hình và chữ */
+    gap: 8px; /* Khoảng cách giữa hình và chữ */
+}
+
+.thuong-hieu img {
+    height: 45px; /* Chiều cao logo */
+    width: auto; /* Tự động tính chiều rộng */
+}
+
+/* Chữ "Flower" màu xanh lá */
+.thuong-hieu span {
+    font-size: 28px;
+    font-weight: bold;
+    color: #009b30; /* Màu xanh lá */
+}
+
+/* Chữ "Shop" màu hồng */
+.thuong-hieu .chu-shop {
+    color: #e91e63; /* Màu hồng */
+}
+
+/* ========================================
+   THANH MENU ĐIỀU HƯỚNG (NAVBAR)
+======================================== */
+
+/* Thanh menu nền xanh lá */
+.thanh-dieu-huong {
+    background-color: #009b30; /* Màu xanh lá */
+    padding: 0;
+}
+
+/* Danh sách menu nằm ngang */
+nav ul.menu-chinh {
+    display: flex; /* Sắp xếp các mục menu theo hàng ngang */
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
+    gap: 0; /* Không có khoảng cách giữa các mục */
+    margin: 0;
+}
+
+/* Mỗi mục menu */
+nav ul.menu-chinh li {
+    position: relative; /* Để dropdown có thể định vị tuyệt đối */
+}
+
+/* Link trong menu */
+nav ul.menu-chinh li a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #fff; /* Chữ màu trắng */
+    padding: 15px 25px; /* Khoảng cách trong */
+    display: block; /* Hiển thị dạng block để có thể click toàn bộ vùng */
+    transition: background 0.3s; /* Hiệu ứng chuyển màu nền mượt mà */
+    font-size: 16px;
+}
+
+/* Khi hover vào menu, đổi màu nền */
+nav ul.menu-chinh li a:hover {
+    background-color: #007a24; /* Màu xanh đậm hơn */
+}
+
+/* ========================================
+   MENU DROPDOWN (MENU CON)
+======================================== */
+
+/* Mục menu có dropdown */
+.co-menu-con {
+    position: relative; /* Để menu con định vị theo mục cha */
+}
+
+/* Menu con (ẩn mặc định) */
+.menu-con {
+    display: none; /* Ẩn menu con */
+    position: absolute; /* Định vị tuyệt đối */
+    top: 100%; /* Hiển thị ngay dưới menu cha */
+    left: 0;
+    background-color: #009b30; /* Nền xanh lá */
+    min-width: 190px; /* Độ rộng tối thiểu */
+    box-shadow: 0 8px 16px rgba(0,0,0,.12); /* Đổ bóng */
+    z-index: 10; /* Hiển thị trên các phần tử khác */
+    text-align: left;
+    border-radius: 10px; /* Bo góc */
+    overflow: hidden; /* Ẩn phần thừa */
+}
+
+/* Link trong menu con */
+.menu-con a {
+    color: #fff; /* Chữ trắng */
+    padding: 10px 12px; /* Khoảng cách trong */
+    display: block;
+    text-decoration: none; /* Bỏ gạch chân */
+}
+
+/* Khi hover vào link trong menu con, đổi màu hồng */
+.menu-con a:hover {
+    background: #e91e63; /* Màu hồng */
+}
+
+/* Khi hover vào mục dropdown, hiển thị menu con */
+.co-menu-con:hover .menu-con {
+    display: block; /* Hiện menu con */
+}
+
+/* ========================================
+   Ô TÌM KIẾM (SEARCH BOX)
+======================================== */
+
+/* Sắp xếp ô input và nút tìm kiếm nằm ngang */
+.hop-tim-kiem {
+    margin-left: auto;
+    display: flex;
+    gap: 8px; /* Khoảng cách giữa input và button */
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Ô nhập liệu tìm kiếm */
+.hop-tim-kiem input {
+    padding: 8px 10px; /* Khoảng cách trong */
+    border: none;
+    border-radius: 10px; /* Bo góc */
+    width: 210px; /* Độ rộng */
+    font-size: 14px;
+}
+
+/* Khi click vào ô input, đổi màu viền */
+.hop-tim-kiem input:focus {
+    outline: none; /* Bỏ viền mặc định của trình duyệt */
+    box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2); /* Highlight nhẹ để thấy ô đang được focus */
+}
+
+/* Nút tìm kiếm */
+.hop-tim-kiem button {
+    padding: 9px 14px;
+    border: none; /* Bỏ viền */
+    border-radius: 10px; /* Bo góc */
+    background: #e91e63; /* Nền màu hồng */
+    color: #fff; /* Chữ trắng */
+    cursor: pointer; /* Con trỏ chuột dạng bàn tay */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Khi hover vào nút, tăng độ sáng */
+.hop-tim-kiem button:hover {
+    filter: brightness(1.1); /* Tăng độ sáng 10% */
+}
+
+/* ========================================
+   PHẦN NỘI DUNG CHÍNH (MAIN CONTENT)
+======================================== */
+
+/* Khoảng cách trên dưới cho phần nội dung chính */
+main {
+    padding: 30px 0;
+}
+
+/* Wrapper chứa sidebar và phần sản phẩm, sắp xếp ngang */
+.bo-cuc-noi-dung {
+    display: flex; /* Sắp xếp sidebar và products nằm ngang */
+    gap: 30px; /* Khoảng cách giữa sidebar và products */
+}
+
+/* ========================================
+   SIDEBAR BÊN TRÁI (DANH MỤC SẢN PHẨM)
+======================================== */
+
+/* Khung sidebar */
+.cot-danh-muc {
+    width: 220px; /* Độ rộng cố định */
+    background-color: #fff; /* Nền trắng */
+    padding: 25px 20px; /* Khoảng cách trong */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+    height: fit-content; /* Chiều cao vừa đủ với nội dung */
+}
+
+/* Tiêu đề "Danh mục" */
+.cot-danh-muc h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0; /* Đường kẻ dưới */
+}
+
+/* Danh sách các loại hoa */
+.danh-sach-danh-muc {
+    list-style: none; /* Bỏ dấu chấm đầu dòng */
+}
+
+/* Mỗi mục trong danh sách */
+.danh-sach-danh-muc li {
+    margin-bottom: 5px;
+}
+
+/* Link trong danh sách */
+.danh-sach-danh-muc li a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #555; /* Màu xám */
+    display: block;
+    padding: 10px 12px; /* Khoảng cách trong */
+    border-radius: 5px; /* Bo góc */
+    transition: all 0.3s; /* Hiệu ứng chuyển đổi mượt */
+    font-size: 15px;
+}
+
+/* Khi hover vào link, đổi màu và dịch sang phải */
+.danh-sach-danh-muc li a:hover {
+    background-color: #f5f5f5; /* Nền xám nhạt */
+    color: #009b30; /* Chữ màu xanh lá */
+    padding-left: 18px; /* Dịch sang phải 6px */
+}
+
+/* ========================================
+   PHẦN HIỂN THỊ SẢN PHẨM
+======================================== */
+
+/* Phần sản phẩm chiếm phần còn lại của content-wrapper */
+.khu-san-pham {
+    flex: 1; /* Chiếm toàn bộ không gian còn lại */
+}
+
+/* Tiêu đề "Sản phẩm nổi bật" */
+.khu-san-pham h2 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Lưới hiển thị sản phẩm (3 cột) */
+.luoi-san-pham {
+    display: grid; /* Sử dụng CSS Grid */
+    grid-template-columns: repeat(3, 1fr); /* 3 cột bằng nhau */
+    gap: 30px; /* Khoảng cách giữa các card */
+}
+
+/* Card sản phẩm */
+.the-san-pham {
+    background-color: #fff; /* Nền trắng */
+    border-radius: 12px; /* Bo góc */
+    padding: 20px; /* Khoảng cách trong */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08); /* Đổ bóng nhẹ */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+/* Khi hover vào card, nâng lên và tăng bóng */
+.the-san-pham:hover {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15); /* Bóng đậm hơn */
+    transform: translateY(-5px); /* Nâng lên 5px */
+}
+
+/* Khung chứa hình ảnh sản phẩm */
+.hinh-san-pham {
+    position: relative; /* Làm mốc để định vị icon SALE ở góc ảnh */
+    width: 100%;
+    height: 280px; /* Chiều cao cố định */
+    overflow: hidden; /* Ẩn phần ảnh thừa */
+    border-radius: 10px; /* Bo góc */
+    margin-bottom: 18px;
+    background-color: #f9f9f9; /* Nền xám nhạt */
+}
+
+/* Hình ảnh sản phẩm */
+.hinh-san-pham img:not(.nhan-sale) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cắt ảnh vừa khung */
+    transition: transform 0.4s ease; /* Hiệu ứng zoom mượt mà */
+}
+
+/* Tên sản phẩm */
+.the-san-pham h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Giá sản phẩm */
+.the-san-pham .gia-moi {
+    font-size: 22px;
+    color: #e91e63; /* Màu hồng */
+    font-weight: bold;
+}
+
+/* Dòng hiển thị giá cũ + giá mới */
+.dong-gia {
+    margin-bottom: 18px;
+}
+
+/* Giá cũ hiển thị gạch ngang */
+.gia-cu {
+    color: #8f9a90;
+    text-decoration: line-through;
+    margin-right: 8px;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/* Ảnh SALE nằm ở góc phải phía trên ảnh sản phẩm */
+.nhan-sale {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+    z-index: 2;
+    transition: none; /* Badge SALE đứng yên, không zoom */
+    pointer-events: none;
+    transform: none !important;
+}
+
+.nhan-sale:hover {
+    transform: none !important;
+}
+
+/* Nút "Thêm vào giỏ" */
+.nut-them-gio {
+    width: 100%; /* Chiều rộng 100% */
+    padding: 13px;
+    background-color: #009b30; /* Nền xanh lá */
+    color: #fff; /* Chữ trắng */
+    border: none; /* Bỏ viền */
+    border-radius: 10px; /* Bo góc */
+    cursor: pointer; /* Con trỏ dạng bàn tay */
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+/* Khi hover vào nút, đổi màu và nâng lên */
+.nut-them-gio:hover {
+    background-color: #007a24; /* Xanh đậm hơn */
+    transform: translateY(-2px); /* Nâng lên 2px */
+}
+
+/* ========================================
+   PHẦN FOOTER (CHÂN TRANG)
+======================================== */
+
+/* Footer nền xanh lá */
+footer {
+    background-color: #009b30; /* Nền xanh lá */
+    color: #fff; /* Chữ trắng */
+    padding: 35px 0; /* Khoảng cách trên dưới */
+    margin-top: 60px; /* Khoảng cách với phần trên */
+}
+
+/* Sắp xếp thông tin và bản quyền nằm ngang, 2 đầu */
+.noi-dung-chan-trang {
+    display: flex;
+    justify-content: space-between; /* Thông tin bên trái, bản quyền bên phải */
+    align-items: flex-start; /* Căn trên cùng */
+}
+
+/* Thông tin liên hệ */
+.thong-tin-chan-trang h3 {
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.thong-tin-chan-trang p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+}
+
+/* Phần bản quyền */
+.ban-quyen {
+    text-align: right; /* Căn phải */
+}
+
+.ban-quyen p {
+    font-size: 14px;
+    opacity: 0.9; /* Độ mờ 90% */
+}

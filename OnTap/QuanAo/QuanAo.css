@@ -1,0 +1,496 @@
+/* ==================================================
+   PHẦN 1: CÀI ĐẶT CHUNG TOÀN TRANG
+   Ý nghĩa đơn giản:
+   - Đưa mọi phần tử về cùng một mốc (xóa lề mặc định trình duyệt).
+   - Tạo bộ màu dùng chung để đổi giao diện nhanh, không sửa lặp nhiều nơi.
+   ================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Biến màu: giống như đặt tên sẵn cho màu để tái sử dụng */
+    --bg-page: #edf1ef;
+    --green-soft: #cfe2cf;
+    --green-mid: #9fbe9e;
+    --green-strong: #5f8c68;
+    --text-main: #2c3b31;
+    --line-soft: #c8d8c6;
+}
+
+body {
+    /* Font chữ và màu nền chung cho toàn bộ trang */
+    font-family: "Times New Roman", serif;
+    color: var(--text-main);
+    background: var(--bg-page);
+    line-height: 1.5;
+}
+
+.container {
+    /*
+       Khung chứa nội dung:
+       - Màn hình lớn: rộng tối đa 1120px (để không bị quá dài khó đọc).
+       - Màn hình nhỏ: tự co còn 94% chiều ngang.
+       - margin auto: căn giữa trang.
+    */
+    width: min(1120px, 94%);
+    margin: 0 auto;
+}
+
+/*
+   Nhãn ẩn (sr-only):
+   Người dùng bình thường không thấy chữ này,
+   nhưng trình đọc màn hình vẫn đọc được -> tốt cho truy cập (accessibility).
+*/
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==================================================
+   PHẦN 2: HIỆU ỨNG ẢNH TOÀN TRANG
+   Yêu cầu đề: rê chuột vào ảnh thì ảnh phóng to 1.2 lần.
+   ================================================== */
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* Dùng transform để chuyển động mượt và nhẹ hơn đổi width/height */
+    transition: transform 0.35s ease;
+}
+
+img:hover {
+    /* Scale(1.2) = phóng to 120% */
+    transform: scale(1.2);
+}
+
+/* ==================================================
+   PHẦN 3: HEADER (ĐẦU TRANG)
+   Gồm logo, tên shop, tìm kiếm và giỏ hàng.
+   ================================================== */
+.site-header {
+    background: var(--green-soft);
+    border-bottom: 1px solid #bad0bb;
+}
+
+.top-header {
+    min-height: 72px;
+    display: grid;
+    /* Chia thành 3 cột: logo | tên shop | công cụ bên phải */
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    display: inline-block;
+    width: 88px;
+    overflow: hidden; /* Chặn phần ảnh bị tràn khi ảnh phóng to */
+}
+
+.brand-name {
+    text-align: center;
+    font-size: 34px;
+    color: #3f5f45;
+    letter-spacing: 0.4px;
+}
+
+.header-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    /* Tạo ô tìm kiếm bo tròn giống mẫu */
+    width: 190px;
+    border: 1px solid #b9ccba;
+    border-radius: 999px;
+    padding: 6px 12px;
+    background: #f9fbf8;
+    font-size: 13px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--green-mid);
+    box-shadow: 0 0 0 2px rgba(159, 190, 158, 0.3);
+}
+
+.cart-link {
+    /* Nút giỏ hàng bên phải, có viền và nền sáng */
+    text-decoration: none;
+    color: #35563d;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    border: 1px solid #b8cdb9;
+    background: #f3f8f2;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.cart-link:hover {
+    /* Hover: nút nhô lên nhẹ để có cảm giác bấm được */
+    transform: translateY(-2px);
+    background: #e2efe1;
+}
+
+/* ==================================================
+   PHẦN 4: MENU CẤP 1 + CẤP 2
+   Cấp 1 = menu chính, cấp 2 = menu con của "Sản phẩm".
+   ================================================== */
+.main-nav {
+    background: #b9d1b8;
+    border-top: 1px solid #a7c3a6;
+}
+
+.menu-level-1 {
+    list-style: none;
+    display: flex;
+    /* Căn menu ra giữa ngang trang */
+    justify-content: center;
+    gap: 2px;
+}
+
+.menu-level-1 > li {
+    /* Làm gốc tọa độ cho menu con bám đúng mục cha */
+    position: relative;
+}
+
+.menu-level-1 > li > a {
+    display: block;
+    text-decoration: none;
+    color: #2f4d36;
+    font-size: 14px;
+    padding: 10px 16px;
+    transition: background 0.2s ease;
+}
+
+.menu-level-1 > li > a:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* Dropdown cấp 2 bám đúng cấu trúc đề yêu cầu */
+.menu-level-2 {
+    list-style: none;
+    /* Menu con ẩn mặc định, chỉ hiện khi hover vào mục cha */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #9fbe9e;
+    border: 1px solid #85ad89;
+    display: none;
+    z-index: 30;
+}
+
+.menu-level-2 li a {
+    display: block;
+    padding: 9px 12px;
+    text-decoration: none;
+    color: #203425;
+    font-size: 14px;
+}
+
+.menu-level-2 li a:hover {
+    background: #89ad8c;
+}
+
+.dropdown:hover .menu-level-2 {
+    /* Khi rê vào "Sản phẩm" thì hiện danh sách menu con */
+    display: block;
+}
+
+/* ==================================================
+   PHẦN 5: BANNER
+   Ảnh lớn + nội dung chồng lên ảnh.
+   ================================================== */
+.banner {
+    margin-top: 12px;
+}
+
+.banner-image-wrap {
+    /*
+       Relative: tạo mốc để chữ/nút bên trong đặt đè đúng vị trí.
+       Overflow hidden: chặn phần ảnh tràn ra ngoài khi phóng to.
+    */
+    position: relative;
+    overflow: hidden; /* Giữ ảnh nằm gọn khi hover scale */
+    border: 1px solid #d9e3d8;
+    background: #fff;
+}
+
+.banner-image-wrap img {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+}
+
+.banner-content {
+    /* Absolute: đặt chữ + nút nằm trên ảnh giống mẫu đề */
+    position: absolute;
+    right: 10%;
+    top: 32%;
+    text-align: center;
+    color: #8f7b6b;
+}
+
+.banner-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Nút shop now: hover nổi lên + gạch chân chữ */
+.btn-shop {
+    /* Nút kêu gọi hành động chính của banner */
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+    color: #fff;
+    background: #85796f;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.btn-shop:hover {
+    /* Nổi lên + có bóng + gạch chân chữ khi rê chuột */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+    text-decoration: underline;
+}
+
+/* ==================================================
+    PHẦN 6: KHU SẢN PHẨM
+    Hiển thị danh sách sản phẩm dạng lưới.
+   ================================================== */
+.products-section {
+    margin-top: 24px;
+}
+
+.products-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #3c5d43;
+}
+
+.product-grid {
+    display: grid;
+    /* Desktop: 4 cột; màn nhỏ sẽ giảm cột trong media query bên dưới */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+.product-card {
+    background: #f6f8f6;
+    border: 1px solid var(--line-soft);
+    text-align: center;
+    padding: 8px 8px 12px;
+}
+
+.product-image {
+    display: block;
+    /* Nếu thiếu dòng này, ảnh zoom sẽ tràn khỏi khung sản phẩm */
+    overflow: hidden; /* Cắt ảnh trong card khi ảnh phóng to */
+    border: 1px solid #d6e2d4;
+}
+
+.product-image img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.btn-buy {
+    display: inline-block;
+    margin-top: 6px;
+    text-decoration: none;
+    color: #113f20;
+    font-size: 13px;
+    background: #c3e2c5;
+    border: 1px solid #9dc3a0;
+    border-radius: 999px;
+    padding: 4px 12px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-buy:hover {
+    /* Hover vào nút mua: đổi màu + nâng nhẹ + gạch chân */
+    background: #add4b0;
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+/* ==================================================
+   PHẦN 7: BẢNG SIZE
+   Bảng quy đổi số đo/cân nặng theo từng size.
+   ================================================== */
+.size-section {
+    margin-top: 26px;
+    padding-top: 10px;
+    border-top: 1px solid #d2dfd0;
+}
+
+.size-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #3f5f45;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    /* Gộp viền giữa các ô để bảng gọn hơn */
+    border-collapse: collapse;
+    background: #f8faf7;
+    border: 2px solid #97b595;
+}
+
+th,
+td {
+    border: 1px solid #9cb99a;
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+}
+
+th {
+    background: #dcead9;
+    color: #2a4330;
+}
+
+/* Yêu cầu đề: hover từng dòng trong bảng đổi màu */
+tbody tr:hover {
+    background: #d9ead6;
+}
+
+/* ==================================================
+    PHẦN 8: FOOTER (CHÂN TRANG)
+    Chia thành 2 cột liên kết thông tin.
+   ================================================== */
+.site-footer {
+    margin-top: 28px;
+    background: #cfe2cf;
+    border-top: 1px solid #b7cfb6;
+    padding-top: 22px;
+}
+
+.footer-grid {
+    display: grid;
+    /* 2 cột: bên trái Giới thiệu, bên phải Dịch vụ khách hàng */
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+
+.site-footer h3 {
+    margin-bottom: 10px;
+    color: #3a5b41;
+}
+
+.site-footer ul {
+    list-style: none;
+}
+
+.site-footer li + li {
+    margin-top: 6px;
+}
+
+.site-footer a {
+    color: #4b6f52;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+    /* Hover link ở footer: đậm hơn + gạch chân để người dùng biết có thể bấm */
+    color: #22402a;
+    text-decoration: underline;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 18px;
+    padding: 10px 0 14px;
+    font-size: 13px;
+    color: #49694f;
+}
+
+/* ==================================================
+    PHẦN 9: RESPONSIVE (TỰ THÍCH NGHI MÀN HÌNH)
+    - Tablet: giảm cột.
+    - Mobile: dồn về 1 cột để đọc dễ hơn.
+   ================================================== */
+@media (max-width: 980px) {
+    .top-header {
+          /* Tablet: header dồn thành 1 cột để khỏi chật ngang */
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    .brand-name {
+        font-size: 30px;
+    }
+
+    .product-grid {
+        /* Tablet: lưới sản phẩm từ 4 cột xuống 2 cột */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        /* Footer xuống 1 cột để chữ không bị bó hẹp */
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .brand-name {
+        font-size: 26px;
+    }
+
+    .menu-level-1 {
+        /* Mobile: menu được phép tự xuống dòng */
+        flex-wrap: wrap;
+    }
+
+    .banner-image-wrap img {
+        height: 320px;
+    }
+
+    .banner-content {
+        right: 6%;
+        top: 28%;
+    }
+
+    .banner-subtitle {
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+
+    .product-grid {
+        /* Mobile: sản phẩm hiển thị 1 cột cho dễ nhìn */
+        grid-template-columns: 1fr;
+    }
+}

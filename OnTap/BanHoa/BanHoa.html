@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!-- Khai báo mã hóa ký tự UTF-8 để hiển thị tiếng Việt -->
+    <meta charset="UTF-8">
+    <!-- Thiết lập responsive cho mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tiêu đề trang web hiển thị trên tab trình duyệt -->
+    <title>FlowerShop - Cửa hàng hoa</title>
+    <!-- Liên kết file CSS bên ngoài -->
+    <link rel="stylesheet" href="BanHoa.css">
+</head>
+<body>
+    <!-- ========== PHẦN HEADER (ĐẦU TRANG) ========== -->
+    <header>
+        <!-- Phần trên của header: Logo và tìm kiếm -->
+        <div class="dau-trang-tren">
+            <div class="khung-trang">
+                <!-- Logo cửa hàng -->
+                <div class="thuong-hieu">
+                    <img src="HinhAnh/logo.png" alt="FlowerShop Logo">
+                    <!-- Tên cửa hàng: "Flower" màu xanh, "Shop" màu hồng -->
+                    <span>Flower<span class="chu-shop">Shop</span></span>
+                </div>
+                <!-- Ô tìm kiếm sản phẩm -->
+                <div class="hop-tim-kiem">
+                    <input type="text" placeholder="Tìm sản phẩm">
+                    <button>Tìm</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Thanh menu điều hướng (navbar) -->
+        <nav class="thanh-dieu-huong">
+            <div class="khung-trang">
+                <ul class="menu-chinh">
+                    <!-- Menu Trang chủ -->
+                    <li><a href="#">Trang chủ</a></li>
+                    
+                    <!-- Menu Sản phẩm có dropdown (menu con) -->
+                    <li class="co-menu-con">
+                        <a href="#">Sản phẩm ▼</a>
+                        <!-- Menu con xuất hiện khi hover vào "Sản phẩm" -->
+                        <div class="menu-con">
+                            <a href="#">Hoa cưới</a>
+                            <a href="#">Hoa sinh nhật</a>
+                            <a href="#">Hoa khai trương</a>
+                            <a href="#">Hoa chúc mừng</a>
+                        </div>
+                    </li>
+                    
+                    <!-- Menu Giới thiệu -->
+                    <li><a href="#">Giới thiệu</a></li>
+                    
+                    <!-- Menu Liên hệ -->
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========== PHẦN NỘI DUNG CHÍNH ========== -->
+    <main>
+        <div class="khung-trang">
+            <!-- Wrapper chứa sidebar và phần sản phẩm -->
+            <div class="bo-cuc-noi-dung">
+                
+                <!-- ===== SIDEBAR BÊN TRÁI: Danh mục sản phẩm ===== -->
+                <aside class="cot-danh-muc">
+                    <h3>Danh mục</h3>
+                    <!-- Danh sách các loại hoa -->
+                    <ul class="danh-sach-danh-muc">
+                        <li><a href="#">Tất cả</a></li>
+                        <li><a href="#">Hoa cưới</a></li>
+                        <li><a href="#">Hoa sinh nhật</a></li>
+                        <li><a href="#">Hoa khai trương</a></li>
+                        <li><a href="#">Hoa chúc mừng</a></li>
+                        <li><a href="#">Giỏ hoa</a></li>
+                        <li><a href="#">Hoa theo mùa</a></li>
+                    </ul>
+                </aside>
+
+                <!-- ===== PHẦN HIỂN THỊ SẢN PHẨM ===== -->
+                <section class="khu-san-pham">
+                    <h2>Sản phẩm nổi bật</h2>
+                    
+                    <!-- Lưới hiển thị các sản phẩm (3 cột) -->
+                    <div class="luoi-san-pham">
+                        
+                        <!-- Card sản phẩm 1 -->
+                        <div class="the-san-pham san-pham-giam-gia">
+                            <!-- Hình ảnh sản phẩm (có hiệu ứng zoom khi hover) -->
+                            <div class="hinh-san-pham">
+                                <img src="HinhAnh/hinh1.jpg" alt="Bó hồng đỏ">
+                                <img class="nhan-sale" src="HinhAnh/sale.png" alt="Sale">
+                            </div>
+                            <!-- Tên sản phẩm -->
+                            <h3>Bó hồng đỏ</h3>
+                            <!-- Giá sản phẩm -->
+                            <p class="dong-gia">
+                                <span class="gia-cu">690.000đ</span>
+                                <span class="gia-moi">590.000đ</span>
+                            </p>
+                            <!-- Nút thêm vào giỏ hàng -->
+                            <button class="nut-them-gio">Thêm vào giỏ</button>
+                        </div>
+                        
+                        <!-- Card sản phẩm 2 -->
+                        <div class="the-san-pham">
+                            <div class="hinh-san-pham">
+                                <img src="HinhAnh/hinh2.jpg" alt="Hướng dương tươi">
+                            </div>
+                            <h3>Hướng dương tươi</h3>
+                            <p class="dong-gia">
+                                <span class="gia-moi">450.000đ</span>
+                            </p>
+                            <button class="nut-them-gio">Thêm vào giỏ</button>
+                        </div>
+                        
+                        <!-- Card sản phẩm 3 -->
+                        <div class="the-san-pham">
+                            <div class="hinh-san-pham">
+                                <img src="HinhAnh/hinh3.jpg" alt="Giỏ tulip mix">
+                            </div>
+                            <h3>Giỏ tulip mix</h3>
+                            <p class="dong-gia">
+                                <span class="gia-moi">820.000đ</span>
+                            </p>
+                            <button class="nut-them-gio">Thêm vào giỏ</button>
+                        </div>
+                        
+                        <!-- Card sản phẩm 4 -->
+                        <div class="the-san-pham">
+                            <div class="hinh-san-pham">
+                                <img src="HinhAnh/hinh4.jpg" alt="Hoa lily trắng">
+                            </div>
+                            <h3>Hoa lily trắng</h3>
+                            <p class="dong-gia">
+                                <span class="gia-moi">680.000đ</span>
+                            </p>
+                            <button class="nut-them-gio">Thêm vào giỏ</button>
+                        </div>
+                        
+                        <!-- Card sản phẩm 5 -->
+                        <div class="the-san-pham san-pham-giam-gia">
+                            <div class="hinh-san-pham">
+                                <img src="HinhAnh/hinh5.jpg" alt="Bó hoa cẩm chướng">
+                                <img class="nhan-sale" src="HinhAnh/sale.png" alt="Sale">
+                            </div>
+                            <h3>Bó hoa cẩm chướng</h3>
+                            <p class="dong-gia">
+                                <span class="gia-cu">620.000đ</span>
+                                <span class="gia-moi">520.000đ</span>
+                            </p>
+                            <button class="nut-them-gio">Thêm vào giỏ</button>
+                        </div>
+                        
+                        <!-- Card sản phẩm 6 -->
+                        <div class="the-san-pham">
+                            <div class="hinh-san-pham">
+                                <img src="HinhAnh/hinh6.jpg" alt="Giỏ hoa hồng phấn">
+                            </div>
+                            <h3>Giỏ hoa hồng phấn</h3>
+                            <p class="dong-gia">
+                                <span class="gia-moi">750.000đ</span>
+                            </p>
+                            <button class="nut-them-gio">Thêm vào giỏ</button>
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PHẦN FOOTER (CHÂN TRANG) ========== -->
+    <footer>
+        <div class="khung-trang">
+            <div class="noi-dung-chan-trang">
+                <!-- Thông tin liên hệ bên trái -->
+                <div class="thong-tin-chan-trang">
+                    <h3>FlowerShop</h3>
+                    <p>Địa chỉ: 123 Hoa Lan, Q. Phú Nhuận, TP. HCM</p>
+                    <p>Điện thoại: 0909 000 111</p>
+                    <p>Email: contact@flowershop.vn</p>
+                </div>
+                <!-- Bản quyền bên phải -->
+                <div class="ban-quyen">
+                    <p>© 2026 FlowerShop. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

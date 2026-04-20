@@ -1,0 +1,481 @@
+/* ==================================================
+   PHẦN 1: CÀI ĐẶT CHUNG
+   ================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+:root {
+    --bg-page: #edf2ee;
+    --line-soft: #d8e1d8;
+    --green-text: #2e5f35;
+    --pink-a: #ec6aca;
+    --pink-b: #ab4ce0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/*
+   Khung chính full trang, nhưng nội dung chính sẽ căn giữa theo container
+   để giống bố cục bài BanHoa.
+*/
+.page-shell {
+    width: 100%;
+    min-height: 100vh;
+    border: 0;
+    background: var(--bg-page);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Nhãn ẩn cho truy cập màn hình đọc */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==================================================
+   PHẦN 2: HEADER
+   ================================================== */
+.site-header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-top {
+    padding: 15px 0;
+    background: #fff;
+}
+
+.header-top .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-wrap img {
+    width: 44px;
+    height: auto;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-text {
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.2px;
+}
+
+.gift-word {
+    color: #7d4e90;
+}
+
+.shop-word {
+    color: #6cb874;
+}
+
+/* Cụm tìm kiếm nằm bên phải giống mẫu */
+.search-form {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-form input {
+    width: 210px;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.search-form input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2);
+}
+
+.search-form button {
+    border: none;
+    border-radius: 10px;
+    padding: 9px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #6bc886;
+    color: #fff;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    filter: brightness(1.06);
+}
+
+/* ==================================================
+   PHẦN 3: MENU CẤP 1 + CẤP 2
+   ================================================== */
+.main-nav {
+    background: linear-gradient(90deg, var(--pink-a), var(--pink-b));
+}
+
+.menu-level-1 {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu-level-1 > li {
+    position: relative;
+}
+
+.menu-level-1 > li > a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 22px;
+    font-size: 15px;
+}
+
+.menu-level-1 > li > a:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.dropdown > a::after {
+    content: " ▼";
+    font-size: 11px;
+}
+
+.menu-level-2 {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    display: none;
+    background: linear-gradient(180deg, #ef71d2, #b14de5);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.14);
+    z-index: 10;
+}
+
+.menu-level-2 a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.menu-level-2 a:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.dropdown:hover .menu-level-2 {
+    display: block;
+}
+
+/* ==================================================
+   PHẦN 4: LAYOUT CHÍNH 2 CỘT
+   ================================================== */
+.content-layout {
+    display: flex;
+    gap: 30px;
+}
+
+main {
+    padding: 30px 0;
+}
+
+.sidebar {
+    width: 220px;
+    background: #fff;
+    padding: 25px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: fit-content;
+}
+
+/* Sidebar danh mục bên trái */
+.sidebar h2 {
+    font-size: 20px;
+    font-family: "Times New Roman", serif;
+    margin-bottom: 20px;
+    color: #3b4f41;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.category-list {
+    list-style: none;
+}
+
+.category-list li + li {
+    margin-top: 4px;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: #555;
+    display: block;
+    padding: 10px 12px;
+    font-size: 15px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+/* Yêu cầu đề: hover menu danh mục thì đổi màu nền */
+.category-list a:hover {
+    background: #f5f5f5;
+    color: #009b30;
+    padding-left: 18px;
+}
+
+/* ==================================================
+   PHẦN 5: DANH SÁCH SẢN PHẨM (3 CỘT)
+   ================================================== */
+.products-section h1 {
+    font-size: 26px;
+    font-family: "Times New Roman", serif;
+    color: #3b4f41;
+    margin-bottom: 30px;
+}
+
+.products {
+    flex: 1;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid var(--line-soft);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ảnh có khung để khi scale 1.2 không tràn ra ngoài card */
+.product-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #d8e1d8;
+    margin-bottom: 18px;
+    background: #f9f9f9;
+}
+
+.product-image-wrap img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+/* Yêu cầu đề: hover ảnh sản phẩm thì phóng to 1.2 */
+.product-image-wrap img:hover {
+    transform: scale(1.2);
+}
+
+/* Huy hiệu SALE đặt góc phải phía trên */
+.sale-badge {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 3px solid #f7d26d;
+    background: #d54b49;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+}
+
+.product-card h3 {
+    font-size: 18px;
+    line-height: 1.35;
+    margin: 0 0 12px;
+    color: #333;
+    min-height: 48px;
+}
+
+.price-row {
+    margin-bottom: 18px;
+    font-size: 18px;
+}
+
+.old-price {
+    color: #7f8b80;
+    text-decoration: line-through;
+    margin-right: 8px;
+}
+
+.new-price {
+    color: #4fab66;
+    font-weight: 700;
+}
+
+.btn-add {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(90deg, var(--pink-a), var(--pink-b));
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Yêu cầu đề: hover nút bấm có hiệu ứng */
+.btn-add:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+/* ==================================================
+   PHẦN 6: FOOTER
+   ================================================== */
+.site-footer {
+    margin-top: 60px;
+    background: linear-gradient(90deg, #df63cf, #ac4fdf);
+    color: #fff;
+    padding: 35px 0;
+}
+
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+.footer-left ul {
+    list-style: none;
+}
+
+.footer-left li + li {
+    margin-top: 10px;
+}
+
+.footer-left a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-left a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    font-size: 14px;
+    margin-top: 2px;
+    opacity: 0.92;
+}
+
+/* ==================================================
+   PHẦN 7: RESPONSIVE
+   ================================================== */
+@media (max-width: 980px) {
+    .content-layout {
+        flex-direction: column;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .header-top .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .menu-level-1 {
+        flex-wrap: wrap;
+    }
+
+    .logo-wrap img {
+        width: 30px;
+    }
+
+    .brand-text {
+        font-size: 30px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        margin-top: 40px;
+    }
+
+    .site-footer .container {
+        flex-direction: column;
+        gap: 14px;
+    }
+}

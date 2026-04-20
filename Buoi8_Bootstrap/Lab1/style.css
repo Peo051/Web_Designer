@@ -1,0 +1,35 @@
+body {
+    background: #efefef;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.demo-box {
+    min-height: 22px;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 8px;
+}
+
+.c1 {
+    background: #1f6fdf;
+}
+
+.c2 {
+    background: #6c757d;
+}
+
+.c3 {
+    background: #26a63a;
+}
+
+.c4 {
+    background: #f3c500;
+    color: #222;
+}
+
+.c5 {
+    background: #1f6fdf;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!--
+        CÀI ĐẶT CƠ BẢN CỦA TRANG WEB
+        - charset UTF-8: hiển thị tiếng Việt đúng.
+        - viewport: giúp trang tự co giãn trên điện thoại.
+        - title: tiêu đề tab trình duyệt.
+        - link css: nối với file CSS bên ngoài (đúng yêu cầu đề).
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GiftShop</title>
+    <link rel="stylesheet" href="QuaTang.css">
+</head>
+<body>
+    <!--
+        KHUNG CHÍNH BAO TOÀN BỘ WEBSITE
+        Khung này tạo viền giống mẫu đề: nhìn như một "tờ layout" nằm giữa trang.
+    -->
+    <div class="page-shell">
+        <!-- HEADER: logo + ô tìm kiếm + nút Tìm -->
+        <header class="site-header">
+            <div class="header-top">
+                <div class="container">
+                    <div class="logo-wrap">
+                        <img src="HinhAnh/logo.svg" alt="Logo GiftShop">
+                        <span class="brand-text"><span class="gift-word">Gift</span><span class="shop-word">Shop</span></span>
+                    </div>
+
+                    <form class="search-form" action="#" method="get">
+                        <label class="sr-only" for="search-input">Tìm sản phẩm</label>
+                        <input id="search-input" name="keyword" type="text" placeholder="Tìm sản phẩm...">
+                        <button type="submit">Tìm</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--
+                MENU CẤP 1 + MENU CẤP 2
+                - Cấp 1: Trang chủ, Sản phẩm, Giới thiệu, Liên hệ.
+                - Cấp 2: nằm trong mục "Sản phẩm" để đúng rubric HTML lồng danh sách.
+            -->
+            <nav class="main-nav">
+                <div class="container">
+                    <ul class="menu-level-1">
+                        <li><a href="#">Trang chủ</a></li>
+
+                        <li class="dropdown">
+                            <a href="#">Sản phẩm</a>
+                            <ul class="menu-level-2">
+                                <li><a href="#">Gấu bông</a></li>
+                                <li><a href="#">Quà tặng</a></li>
+                                <li><a href="#">Phụ kiện</a></li>
+                                <li><a href="#">Mùa lễ</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">Giới thiệu</a></li>
+                        <li><a href="#footer">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!--
+            PHẦN NỘI DUNG CHÍNH: chia 2 cột
+            - Cột trái: Danh mục.
+            - Cột phải: Sản phẩm nổi bật.
+        -->
+        <main>
+            <div class="container">
+                <div class="content-layout content-wrapper">
+                    <aside class="sidebar">
+                        <h2>Danh mục</h2>
+                        <ul class="category-list">
+                            <li><a href="#">Tất cả</a></li>
+                            <li><a href="#">Gấu bông</a></li>
+                            <li><a href="#">Quà tặng</a></li>
+                            <li><a href="#">Phụ kiện</a></li>
+                            <li><a href="#">Mùa lễ</a></li>
+                            <li><a href="#">Dịp đặc biệt</a></li>
+                        </ul>
+                    </aside>
+
+                    <section class="products-section products">
+                        <h1>Sản phẩm nổi bật</h1>
+
+                <!--
+                    Danh sách sản phẩm: 3 sản phẩm mỗi dòng (grid 3 cột).
+                    Mỗi card có: ảnh, tên, giá, nút Thêm vào giỏ.
+                    Một số card có thêm huy hiệu SALE ở góc phải phía trên.
+                -->
+                    <div class="product-grid">
+                    <article class="product-card sale">
+                        <div class="product-image-wrap">
+                            <img src="HinhAnh/sp1.jpg" alt="Thú bông Quà bông rô lông xù">
+                            <span class="sale-badge">SALE</span>
+                        </div>
+                        <h3>Thú bông Quà bông rô lông xù</h3>
+                        <p class="price-row">
+                            <span class="old-price">190.000đ</span>
+                            <span class="new-price">159.000đ</span>
+                        </p>
+                        <a href="#" class="btn-add">Thêm vào giỏ</a>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <img src="HinhAnh/sp2.jpg" alt="Gấu teddy ôm hoa lông xoăn">
+                        </div>
+                        <h3>Gấu teddy ôm hoa lông xoăn</h3>
+                        <p class="price-row">
+                            <span class="new-price">160.000đ</span>
+                        </p>
+                        <a href="#" class="btn-add">Thêm vào giỏ</a>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <img src="HinhAnh/sp3.jpg" alt="Thú bông nhỏ Mèo đeo ngọc trai">
+                        </div>
+                        <h3>Thú bông nhỏ Mèo đeo ngọc trai</h3>
+                        <p class="price-row">
+                            <span class="new-price">160.000đ</span>
+                        </p>
+                        <a href="#" class="btn-add">Thêm vào giỏ</a>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <img src="HinhAnh/sp4.jpg" alt="Móc khóa bông Gấu lông xù">
+                        </div>
+                        <h3>Móc khóa bông Gấu lông xù</h3>
+                        <p class="price-row">
+                            <span class="new-price">120.000đ</span>
+                        </p>
+                        <a href="#" class="btn-add">Thêm vào giỏ</a>
+                    </article>
+
+                    <article class="product-card sale">
+                        <div class="product-image-wrap">
+                            <img src="HinhAnh/sp5.jpg" alt="Thú bông Quà bông rô lông xù">
+                            <span class="sale-badge">SALE</span>
+                        </div>
+                        <h3>Thú bông Quà bông rô lông xù</h3>
+                        <p class="price-row">
+                            <span class="old-price">140.000đ</span>
+                            <span class="new-price">120.000đ</span>
+                        </p>
+                        <a href="#" class="btn-add">Thêm vào giỏ</a>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image-wrap">
+                            <img src="HinhAnh/sp6.jpg" alt="Thú bông Mã Tiểu Dã">
+                        </div>
+                        <h3>Thú bông Mã Tiểu Dã</h3>
+                        <p class="price-row">
+                            <span class="new-price">240.000đ</span>
+                        </p>
+                        <a href="#" class="btn-add">Thêm vào giỏ</a>
+                    </article>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!--
+            FOOTER: nội dung liên hệ bên trái, bản quyền bên phải.
+            Dùng danh sách có link để đúng tiêu chí chấm điểm.
+        -->
+        <footer id="footer" class="site-footer">
+            <div class="container">
+                <div class="footer-left">
+                    <h2>GiftShop</h2>
+                    <ul>
+                        <li><a href="#">Địa chỉ: 123 Hoàng Hoa Thám, TP. HCM</a></li>
+                        <li><a href="#">Điện thoại: 099 111 333</a></li>
+                    </ul>
+                </div>
+                <p class="footer-right">©2026 GiftShop. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

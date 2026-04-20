@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to bottom, #f0f0f0, #e8e8e8);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #333;
+}
+
+.header-top {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.header-title h1 {
+    color: #0052cc;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #0052cc;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+
+.nav-menu li {
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-menu li:last-child {
+    border-right: none;
+}
+
+.nav-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background-color: #003fa3;
+}
+
+.search-box {
+    display: flex;
+    padding: 10px 15px;
+}
+
+.search-box input {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 3px 0 0 3px;
+    width: 150px;
+    font-size: 13px;
+}
+
+.search-box button {
+    padding: 6px 15px;
+    background-color: #fff;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.search-box button:hover {
+    background-color: #e8e8e8;
+}
+
+/* Main Content - 3 Column Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.column {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 0;
+}
+
+/* Section Titles */
+.section-title {
+    background-color: #0052cc;
+    color: white;
+    padding: 12px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    border-bottom: 3px solid #003fa3;
+}
+
+/* Left Column - News/Updates */
+.left-column {
+    grid-column: 1;
+}
+
+.news-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-date {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.news-image {
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.news-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.news-image img:hover {
+    transform: scale(1.05);
+}
+
+.news-item h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.news-item h3 a {
+    color: #0052cc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.news-item h3 a:hover {
+    color: #003fa3;
+    text-decoration: underline;
+}
+
+.news-item p {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Center Column - Announcements */
+.center-column {
+    grid-column: 2;
+}
+
+.announcement-item {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.announcement-item:last-child {
+    border-bottom: 1px solid #eee;
+}
+
+.announcement-date {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.announcement-item h3 {
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.announcement-item h3 a {
+    color: #0052cc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.announcement-item h3 a:hover {
+    color: #003fa3;
+    text-decoration: underline;
+}
+
+/* Highlight Boxes */
+.highlight-box {
+    padding: 15px;
+    margin: 0;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.highlight-box-1 {
+    background-color: #000;
+    color: white;
+    padding: 20px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.highlight-box-2 {
+    background: linear-gradient(135deg, #d946ef, #b024d0);
+    color: white;
+    padding: 20px 15px;
+    border-bottom: none;
+}
+
+/* Right Column - Featured */
+.right-column {
+    grid-column: 3;
+}
+
+.featured-item {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.featured-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.featured-item img:hover {
+    transform: scale(1.05);
+}
+
+.contact-info {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+.contact-info h3 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #0052cc;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.map-container {
+    width: 100%;
+    padding: 15px;
+}
+
+.map-container iframe {
+    border-radius: 3px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .right-column {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .search-box {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .search-box input {
+        flex: 1;
+    }
+    
+    .header-title h1 {
+        font-size: 24px;
+    }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -1,0 +1,38 @@
+.red{
+    margin-left: 50px;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: red;
+    line-height: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.green{
+    margin-left: 90px;
+    margin-top: -40px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: green;
+    line-height: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.blue{
+    margin-left: 130px;
+    margin-top: -40px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: blue;
+    line-height: 100px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
